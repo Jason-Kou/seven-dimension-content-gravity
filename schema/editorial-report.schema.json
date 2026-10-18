@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Jason-Kou/seven-dimension-content-gravity/blob/main/schema/editorial-report.schema.json",
+  "title": "Seven-Dimension Content Gravity Editorial Report",
+  "type": "object",
+  "required": [
+    "source_sha256",
+    "primary_dimensions",
+    "decision",
+    "scores"
+  ],
+  "properties": {
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "primary_dimensions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "emotional_tension",
+          "reader_benefit",
+          "story_or_case",
+          "unique_angle",
+          "author_voice",
+          "format_expression",
+          "specificity"
+        ]
+      }
+    },
+    "decision": {
+      "enum": ["approved", "revise", "blocked"]
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+      }
+    },
+    "thesis": { "type": "string" },
+    "priority_problems": {
+      "type": "array",
+      "maxItems": 3,
+      "items": { "type": "string" }
+    },
+    "risks": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}
