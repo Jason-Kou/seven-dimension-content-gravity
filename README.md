@@ -109,6 +109,7 @@ prompt = build_prompt(text, report, mode="revise")
 ## 文档
 
 - [原始七点总结](references/original-seven-points.md)
+- [原始图文的完整文字整理版](references/original-article-full-text.md)
 - [完整框架](references/framework.md)
 - [AI 日报 A/B 实验](examples/ai-daily-ab/README.md)
 
